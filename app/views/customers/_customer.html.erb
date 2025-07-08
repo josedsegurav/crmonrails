@@ -1,0 +1,29 @@
+<!-- app/views/customers/_customer.html.erb -->
+<div class="card mb-4">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <% if customer.image.attached? %>
+          <figure class="image is-64x64">
+            <%= image_tag customer.image.variant(resize_to_fill: [64, 64]), class: "is-rounded" %>
+          </figure>
+        <% else %>
+          <figure class="image is-64x64">
+            <img src="https://via.placeholder.com/64" alt="Placeholder image" class="is-rounded">
+          </figure>
+        <% end %>
+      </div>
+      <div class="media-content">
+        <p class="title is-5"><%= customer.name %></p>
+        <p class="subtitle is-6"><%= customer.email %></p>
+        <p class="is-size-7 has-text-grey"><%= customer.phone %></p>
+      </div>
+    </div>
+
+    <% if customer.notes.present? %>
+      <div class="content mt-2">
+        <strong>Notes:</strong> <%= customer.notes %>
+      </div>
+    <% end %>
+  </div>
+</div>
