@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
         @customers = Customer.all
     end
 
-    def _customer
-        @customer = Customer.find(params[:id])
+    def alphabetized
+        @customers = Customer.order(:name)
     end
 end
