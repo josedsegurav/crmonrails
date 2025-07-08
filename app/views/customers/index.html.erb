@@ -1,11 +1,12 @@
 
 <section class="section">
   <div class="container">
-    <h1 class="title">Customers in Alphabetical Order</h1>
-
+    <h1 class="title">Customers</h1>
+    <span class="tag is-link is-light is-medium"><%= link_to "Alphabetized View", alphabetized_customers_path %></span>
+    <span class="tag is-link is-light is-medium mb-4"><%= link_to "Missing Email View", missing_email_customers_path %></span>
     <div class="columns is-multiline">
       <% @customers.each do |customer| %>
-        <div class="column is-half">
+        <div class="column is-one-quarter">
           <%= render partial: "customer", locals: { customer: customer } %>
         </div>
       <% end %>

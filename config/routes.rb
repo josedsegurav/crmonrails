@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :customers, only: [:index] do
     collection do
       get :alphabetized
+      get :missing_email
     end
   end
 
